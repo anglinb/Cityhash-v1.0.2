@@ -1,0 +1,42 @@
+# Source files
+index.ts
+cityhash.ts
+tsconfig.json
+vitest.config.ts
+
+# Test files
+*.test.ts
+*.test.js
+*.spec.ts
+*.spec.js
+test-package.js
+debug-*.ts
+verify-*.ts
+detailed-debug.ts
+cross-check.ts
+simple-debug.ts
+minimal-test.ts
+
+# Binary test cases and test utilities
+binary-test-cases.ts
+test-cases-100.ts
+test-correct-*.ts
+test-final-calc.ts
+test-specific-failing.ts
+
+# C implementation and test artifacts
+c-version/
+cityhash.go
+cityhash_test.go
+go.mod
+
+# Development files
+node_modules/
+.env*
+*.log
+.DS_Store
+
+# Keep only dist/ and documentation
+!dist/
+!README.md
+!package.json

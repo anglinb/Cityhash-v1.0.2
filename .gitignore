@@ -1,0 +1,37 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+.env
+.env.local
+.env.production.local
+.env.test.local
+
+# Test files we don't want in git
+*.test.ts
+*.test.js
+*.spec.ts
+*.spec.js
+test-package.js
+debug-*.ts
+verify-*.ts
+detailed-debug.ts
+cross-check.ts
+simple-debug.ts
+minimal-test.ts
+
+# C build artifacts
+c-version/debug-*
+c-version/gen
+c-version/generate-*
+c-version/test-*
+c-version/test64
+!c-version/*.cc
+!c-version/*.h
+
+# Binary test cases and other test utilities
+binary-test-cases.ts
+test-cases-100.ts
+test-correct-*.ts
+test-final-calc.ts
+test-specific-failing.ts

@@ -1,0 +1,42 @@
+{
+  "name": "@anglinb/city-hash",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "TypeScript implementation of CityHash64 - fast, non-cryptographic hash function",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "hash",
+    "cityhash",
+    "cityhash64",
+    "non-cryptographic",
+    "hash-function",
+    "typescript"
+  ],
+  "author": "Brian Anglin",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anglinb/city-hash.git"
+  },
+  "devDependencies": {
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^3.2.4"
+  }
+}
