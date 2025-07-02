@@ -1,6 +1,6 @@
 {
   "name": "@anglinb/city-hash",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "TypeScript implementation of CityHash64 - fast, non-cryptographic hash function",
   "main": "dist/index.js",
@@ -8,6 +8,7 @@
   "exports": {
     ".": {
       "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
       "types": "./dist/index.d.ts"
     }
   },
@@ -15,7 +16,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && tsc -p tsconfig.cjs.json && mv dist-cjs/index.js dist/index.cjs",
     "prepublishOnly": "npm run build",
     "test": "vitest run",
     "test:watch": "vitest"
