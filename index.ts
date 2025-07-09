@@ -225,3 +225,32 @@ export function cityHash64(input: string | Uint8Array): bigint {
     hashLen16(v.second, w.second) + x
   );
 }
+
+/**
+ * CityHash64 truncated to JavaScript's MAX_SAFE_INTEGER
+ * 
+ * Takes the output of cityHash64 and truncates it to fit within JavaScript's
+ * Number.MAX_SAFE_INTEGER (2^53 - 1). This is done by masking off the higher
+ * bits, which can be easily reproduced in other systems like ClickHouse.
+ * 
+ * @param input - The data to hash (string or Uint8Array)
+ * @returns A hash value as a number, guaranteed to be <= Number.MAX_SAFE_INTEGER
+ * 
+ * @example
+ * ```typescript
+ * import { cityHash64NumMax } from '@anglinb/city-hash';
+ * 
+ * // Hash a string
+ * const hash1 = cityHash64NumMax("hello world");
+ * console.log(hash1); // A safe integer
+ * 
+ * // Reproduce in ClickHouse/SQL:
+ * // SELECT cityHash64('hello world') & 0x1FFFFFFFFFFFFF
+ * ```
+ */
+export function cityHash64NumMax(input: string | Uint8Array): number {
+  const hash = cityHash64(input);
+  // JavaScript's MAX_SAFE_INTEGER is 2^53 - 1 = 0x1FFFFFFFFFFFFF
+  const truncated = hash & 0x1FFFFFFFFFFFFFn;
+  return Number(truncated);
+}

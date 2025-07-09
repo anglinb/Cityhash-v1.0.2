@@ -1,6 +1,6 @@
 {
   "name": "@anglinb/city-hash",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "type": "module",
   "description": "TypeScript implementation of CityHash64 - fast, non-cryptographic hash function",
   "main": "dist/index.js",
